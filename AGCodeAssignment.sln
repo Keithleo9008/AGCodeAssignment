@@ -7,6 +7,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAssignment", "CodeAssig
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAssignmentTest", "CodeAssignmentTest\CodeAssignmentTest.csproj", "{6D9BB619-7BEF-418A-A101-3E52535F76B0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RepoFiles", "RepoFiles", "{321DDE21-CF15-4C28-9F06-931A0AAF64EA}"
+	ProjectSection(SolutionItems) = preProject
+		RepoResources\ArchDiagram.png = RepoResources\ArchDiagram.png
+		RepoResources\Bin.PNG = RepoResources\Bin.PNG
+		RepoResources\cmd1.PNG = RepoResources\cmd1.PNG
+		RepoResources\cmd2.PNG = RepoResources\cmd2.PNG
+		RepoResources\cmd3.PNG = RepoResources\cmd3.PNG
+		RepoResources\Fixedpath.PNG = RepoResources\Fixedpath.PNG
+		RepoResources\TextFile1.txt = RepoResources\TextFile1.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
