@@ -1,0 +1,16 @@
+﻿<h1>Application Architecture</h1>
+
+![alt text](CodeAssignment/Help/ArchDiagram.png "Application Architecture")
+
+<h2>Some points on the architecture</h2>
+<ol>
+  <li>Abstract class used to handle file inputs that could be used to create a generic repository, with each new file the "Process" method must be overrideen in the new implentation</li>
+  <li>Service layer created to abstract data logic from application logic, ie files could be replaced with api feed. This implementation of this service would normally injected as a dependency using IoC</li>
+  <li>Basic exception handling done</li>
+  <li>No Logging as this is a small console application</li>
+</ol>
+
+<h1>How To Launch</h1>
+
+
+<h1>Assumptions</h1>
