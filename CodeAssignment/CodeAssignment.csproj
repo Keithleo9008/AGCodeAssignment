@@ -72,6 +72,7 @@
     <Content Include="GitResources\cmd2.PNG" />
     <Content Include="GitResources\cmd3.PNG" />
     <Content Include="GitResources\Fixedpath.PNG" />
+    <Content Include="GitResources\params.PNG" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
