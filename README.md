@@ -35,9 +35,7 @@ Result <br/>
 <ol>
   <li>Download the Repo</li>
   <li>Open the project</li>
-  <li>Make sure the default arguments have been set/li>
+  <li>Make sure the default arguments have been set</li>
   <li>Debug</li>
 </ol>
- <br/>
 ![alt text](CodeAssignment/GitResources/params.PNG "params")
-
