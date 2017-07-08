@@ -50,8 +50,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="DataLayer\ConcreteFileLogic\FileProcessorTweetTests.cs" />
+    <Compile Include="DataLayer\ConcreteFileLogic\FileProcessorUserTests.cs" />
+    <Compile Include="DataLayer\FileProcessorTests.cs" />
+    <Compile Include="ServiceLayer\TwitterDataServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CodeAssignment\CodeAssignment.csproj">
+      <Project>{FC1DED41-0D5E-46BB-B997-E4975E3B56FE}</Project>
+      <Name>CodeAssignment</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
