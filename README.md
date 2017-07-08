@@ -34,6 +34,9 @@ Result <br/>
 ![alt text](CodeAssignment/GitResources/cmd3.PNG "cmd3")
 
 <h2>Debug in Visual Studio</h2>
+
+![alt text](CodeAssignment/GitResources/params.PNG "params")
+
 <ol>
   <li>Download the Repo</li>
   <li>Open the project</li>
@@ -41,4 +44,3 @@ Result <br/>
   <li>Debug</li>
 </ol>
 
-![alt text](CodeAssignment/GitResources/params.PNG "params")
