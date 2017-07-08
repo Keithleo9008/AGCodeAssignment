@@ -18,7 +18,12 @@ namespace CodeAssignment.ServiceLayer.Tests
         }
 
         [TestMethod()]
-        public void GetTweetsByUidTest()
+        public void GetTweetsByUidTest_InvalidUid()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void GetTweetsByUidTest_ValidUid()
         {
             throw new NotImplementedException();
         }
