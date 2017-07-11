@@ -35,12 +35,5 @@ namespace CodeAssignment.Tests
             //Assert
             Assert.AreEqual(2, args.Length);
         }
-
-        [ExpectedException(typeof(InvalidFormatException))]
-        [TestMethod]
-        public void LoadTwitterFeedTest()
-        {
-            Assert.Fail();
-        }
     }
 }

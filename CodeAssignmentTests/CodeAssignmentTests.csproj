@@ -73,6 +73,9 @@
     <Content Include="Files\tweet_TooLong.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Files\user - CreateFiveUsers.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Files\user.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
