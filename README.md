@@ -1,9 +1,10 @@
 <h1>About</h1>
 This application was built as a simple console app in C# due to the simplicity of the requirement. This program can be launched using the command line and passing the name of the two input files in as arguments. The directory of these files has been fixed (for no reason other than simplicity) and only the name of the files can be changed. I.e The files must always be stored in the "Files" directory in the root folder of the .exe
-</BR></BR>
-The console app closes automatically after 5 seconds after execution or in Exception
 
 ![alt text](CodeAssignment/GitResources/Fixedpath.PNG "Fixedpath")
+
+</BR></BR>
+The console app closes automatically after 5 seconds after execution or in Exception
 
 <br/>
 <h1>Application Architecture</h1>
