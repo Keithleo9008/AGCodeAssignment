@@ -8,19 +8,14 @@ using System.Threading.Tasks;
 
 namespace CodeAssignment.DataLayer.ConcreteFileLogic.Tests
 {
-    [TestClass()]
+    [TestClass]
     public class FileProcessorUserTests
     {
-        [TestMethod()]
-        public void FileProcessorUserTest()
-        {
-            throw new NotImplementedException();
-        }
 
-        [TestMethod()]
-        public void ProcessTest()
+        [TestMethod]
+        public void Process_ValidFile()
         {
-            throw new NotImplementedException();
+            Assert.Fail();
         }
     }
 }

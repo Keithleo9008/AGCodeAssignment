@@ -1,31 +1,47 @@
 ﻿using CodeAssignment.Helper;
+using CodeAssignment.Models.CustomExceptions;
 using CodeAssignment.ServiceLayer;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CodeAssignment
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            System.AppDomain.CurrentDomain.UnhandledException += UnhandledExceptionTrapper;
-            if (args.Length < 2) {
-                ConsoleHandler.HandleException("Cannot proceed, Please provide the 2 arguments");
+            try
+            {
+                System.AppDomain.CurrentDomain.UnhandledException += UnhandledExceptionTrapper;
+                if (args.Length < 2)
+                {
+                    throw new InvalidArgsException("Cannot proceed, Please provide the 2 arguments");
+                }
+                else
+                {
+                    LoadTwitterFeed(args[0], args[1]);
+                }
+                Console.WriteLine("End of Program. Console will close in 5 seconds");
+                System.Threading.Thread.Sleep(5000);
+                Environment.Exit(1);
             }
-            else {
-                LoadTwitterFeed(args[0], args[1]);
+            catch (Exception ex)
+            {
+                if (ex is InvalidArgsException || ex is InvalidFormatException || ex is FileNotFoundException)
+                {
+                    ConsoleHandler.HandleException(ex.Message);
+                    System.Threading.Thread.Sleep(5000);
+                    //Log error
+                }
             }
-            Console.WriteLine("End of Program. Press Enter to continue");
-            Console.ReadLine();
         }
 
-        static void LoadTwitterFeed(string userTxt, string tweetsTxt)
+        public static void LoadTwitterFeed(string userTxt, string tweetsTxt)
         {
-            try {
                 ITwitterDataService service = new TwitterDataService(userTxt, tweetsTxt);
 
                 foreach (var user in service.GetUserList())
@@ -38,10 +54,6 @@ namespace CodeAssignment
                     }
                     Console.WriteLine("");
                 }
-            }
-            catch (NullReferenceException ex1){
-                ConsoleHandler.HandleException("There was an error loading the data context from the text files");
-            }
         }
 
         static void UnhandledExceptionTrapper(object sender, UnhandledExceptionEventArgs e)
@@ -49,8 +61,7 @@ namespace CodeAssignment
             Console.WriteLine("An unhandled exception occured");
             Console.WriteLine(e.ExceptionObject.ToString());
             Console.WriteLine("Press Enter to continue");
-            Console.ReadLine();
-            Environment.Exit(1);
+            System.Threading.Thread.Sleep(5000);
         }
     }
 }

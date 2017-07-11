@@ -1,6 +1,7 @@
 ﻿using CodeAssignment.DataLayer.ConcreteFileLogic;
 using CodeAssignment.Helper;
 using CodeAssignment.Models;
+using CodeAssignment.Models.CustomExceptions;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -23,12 +24,11 @@ namespace CodeAssignment.ServiceLayer
                 this._usersTxt = userstxt;
                 Users = new FileProcessorUser(userstxt).Process();
                 Tweets = new FileProcessorTweet(tweetTxt).Process();
-                
-                if(this.Users == null)
-                    ConsoleHandler.HandleException("The user file provided is not in a correct format to support the TwitterDataService. Please fix and try again.");
-                if (this.Tweets == null)
-                    ConsoleHandler.HandleException("The tweets file provided is not in a correct format to support the TwitterDataService. Please fix and try again.");
 
+            if (this.Users == null)
+                throw new InvalidFormatException("The user file provided is not in a correct format to support the TwitterDataService. Please fix and try again.");
+            if (this.Tweets == null)
+                throw new InvalidFormatException("The user file provided is not in a correct format to support the TwitterDataService. Please fix and try again.");
         }
 
         public IEnumerable<TwitterTweet> GetTweetsByUid(string uid)

@@ -8,36 +8,31 @@ using System.Threading.Tasks;
 
 namespace CodeAssignment.ServiceLayer.Tests
 {
-    [TestClass()]
+    [TestClass]
     public class TwitterDataServiceTests
     {
-        [TestMethod()]
+        [TestMethod]
         public void TwitterDataServiceTest()
         {
-            throw new NotImplementedException();
+            Assert.Fail();
         }
 
-        [TestMethod()]
-        public void GetTweetsByUidTest_InvalidUid()
+        [TestMethod]
+        public void GetTweetsByUidTest()
         {
-            throw new NotImplementedException();
+            Assert.Fail();
         }
 
-        public void GetTweetsByUidTest_ValidUid()
-        {
-            throw new NotImplementedException();
-        }
-
-        [TestMethod()]
+        [TestMethod]
         public void GetTwitterFeedTest()
         {
-            throw new NotImplementedException();
+            Assert.Fail();
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void GetUserListTest()
         {
-            throw new NotImplementedException();
+            Assert.Fail();
         }
     }
 }

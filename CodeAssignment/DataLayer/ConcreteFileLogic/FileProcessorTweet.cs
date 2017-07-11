@@ -1,5 +1,6 @@
 ﻿using CodeAssignment.Helper;
 using CodeAssignment.Models;
+using CodeAssignment.Models.CustomExceptions;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -34,16 +35,28 @@ namespace CodeAssignment.DataLayer.ConcreteFileLogic
                             Message = message[1].TrimStart()
                         }).ToList();
 
-                    return messages;
+
+                    return TrunacteMessages(messages, 140);
+                    //return messages;
                 }
                 catch (Exception ex)
                 {
-                    ConsoleHandler.HandleException("The " + Filepath + " file contains an invalid format. Please fix this and try again");
+                    throw new InvalidFormatException("The " + Filepath + " file contains an invalid format. Please fix this and try again");
+                    //Log Error
                 }
             }
 
             return null;
         }
 
+        private IEnumerable<TwitterTweet> TrunacteMessages(List<TwitterTweet> list, int size)
+        {
+            foreach (var item in list){
+                if(item.Message.Length > size){
+                    item.Message = item.Message.Substring(0, size);
+                }
+            }
+            return list;
+        }
     }
 }

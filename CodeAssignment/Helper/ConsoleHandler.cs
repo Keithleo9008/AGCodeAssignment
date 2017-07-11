@@ -11,9 +11,9 @@ namespace CodeAssignment.Helper
         public static void HandleException(string message)
         {
             Console.WriteLine(message);
-            Console.WriteLine("Press Enter to Exit");
-            Console.ReadLine();
-            Environment.Exit(1);
+            //Console.WriteLine("Press Enter to Exit");
+            //Console.ReadLine();
+            //Environment.Exit(1);
         }
     }
 }

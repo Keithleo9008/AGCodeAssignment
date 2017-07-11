@@ -16,21 +16,14 @@ namespace CodeAssignment.DataLayer
 
         public FileProcessor(string filepath)
         {
-            _BaseUrl = AppDomain.CurrentDomain.BaseDirectory + "Files\\";
-            try
+            _BaseUrl = AppDomain.CurrentDomain.BaseDirectory + "\\Files\\";
+         
+            this.Filepath = _BaseUrl + filepath;
+            Valid = File.Exists(this.Filepath);
+            if (!Valid)
             {
-                this.Filepath = _BaseUrl + filepath;
-                Valid = File.Exists(this.Filepath);
-                if (!Valid)
-                {
-                    ConsoleHandler.HandleException(String.Format("File [{0}] cannot be found", filepath));
-                }
+                throw new FileNotFoundException(String.Format("File [{0}] cannot be found", filepath));
             }
-            catch (Exception e)
-            {
-                throw new Exception(String.Format("ERROR: could not process file {0} due to error - {1}", filepath, e.Message));
-            }
-           
         }
 
         public abstract IEnumerable<T> Process();
